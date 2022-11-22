@@ -45,11 +45,11 @@ class DistributionListCreateAPIView(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 
-# class RUDClientAPIView(viewsets.ModelViewSet):
-#     queryset = Client.objects.all()
-#     lookup_field = "pk"
-#
-#     def get_serializer_class(self):
-#         if self.request.method == "PATCH":
-#             return UpdateClientSerializer
-#         return ClientSerializer
+class RUDClientAPIView(viewsets.ModelViewSet):
+    queryset = Client.objects.all()
+    lookup_field = "pk"
+
+    def get_serializer_class(self):
+        if self.request.method == "PATCH":
+            return UpdateClientSerializer
+        return ClientSerializer
