@@ -1,4 +1,3 @@
-#from phonenumber_field.modelfields import PhoneNumberField
 from rest_framework import serializers
 from .models import Client, Message, Distribution
 
@@ -6,7 +5,7 @@ class ClientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
         fields = '__all__'
-        #exclude = ('phone_regex', )
+
 
 
 class DistributionResponseSerializer(serializers.ModelSerializer):

@@ -1,7 +1,3 @@
-
-
-#from phonenumber_field.modelfields import PhoneNumberField
-
 from django.core.validators import RegexValidator
 from django.utils import timezone
 from django.db import models
@@ -44,9 +40,7 @@ class Distribution(models.Model):
 class Client(models.Model):
     phone_regex = RegexValidator(regex=r'^7\w{10}$')
     phone_number = models.PositiveIntegerField(verbose_name='phone_number', validators=[phone_regex])
-    #phone_number = PhoneNumberField()
     phone_operator = models.CharField(max_length=50, verbose_name='phone_operator')
-    #phone_operator = PhoneNumberField()
     teg = models.CharField(verbose_name='tag', max_length=50, blank=True)
     time_zone = models.TimeField(verbose_name='time_zone', max_length=10)
     def __str__(self):

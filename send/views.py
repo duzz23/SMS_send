@@ -43,16 +43,3 @@ class DistributionListCreateAPIView(viewsets.ModelViewSet):
         queryset = Distribution.objects.all()
         serializer = DistributionResponseSerializer(queryset, many=True)
         return Response(serializer.data)
-
-
-# class RUDClientAPIView(viewsets.ModelViewSet):
-#     queryset = Client.objects.all()
-#     lookup_field = "pk"
-#
-#     def get_serializer_class(self):
-#         if self.request.method == "PATCH":
-#             return UpdateClientSerializer
-#         return ClientSerializer
-
-
-# ADD new
